@@ -1,5 +1,7 @@
 {
   "run_date": "2026-06-23",
+  "generated_at": "2026-06-23T19:25:12.117885+05:30",
+  "report_timezone": "Asia/Kolkata",
   "report_path": "reports/daily/2026-06-23.md",
   "dataset_path": "data/cybersecurity.csv",
   "dataset_rows": 10000,
@@ -24,24 +26,29 @@
   "top_features": [
     {
       "feature": "dst_port",
-      "importance": 0.399122
+      "importance": 0.397623
     },
     {
       "feature": "src_port",
-      "importance": 0.205708
+      "importance": 0.205724
     },
     {
       "feature": "bytes_sent",
-      "importance": 0.083024
+      "importance": 0.083432
     },
     {
       "feature": "bytes_received",
-      "importance": 0.079778
+      "importance": 0.079829
     },
     {
       "feature": "is_privileged_port",
-      "importance": 0.076818
+      "importance": 0.07753
     }
   ],
-  "metric_deltas_vs_previous_run": {}
+  "metric_deltas_vs_previous_run": {
+    "accuracy": 0.0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1_score": 0.0
+  }
 }
