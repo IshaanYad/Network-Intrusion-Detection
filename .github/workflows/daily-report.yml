@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -40,4 +42,5 @@ jobs:
           git add README.md experiment_log.csv outputs/latest_metrics.json outputs/automation_heartbeat.json reports/daily
           git diff --cached --quiet && exit 0
           git commit -m "chore: refresh daily IDS evaluation report"
+          git pull --rebase origin ${{ github.ref_name }}
           git push origin HEAD:${{ github.ref_name }}
