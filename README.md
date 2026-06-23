@@ -24,7 +24,7 @@ Traditional security systems often miss novel "zero-day" attacks. This project l
 | Recommended Threshold | 0.5 |
 | Split | 70 / 30 |
 
-Latest artifacts: [Daily report](reports/daily/2026-06-23.md), [Experiment log](experiment_log.csv), [Latest metrics JSON](outputs/latest_metrics.json)
+Latest artifacts: [Daily report](reports/daily/2026-06-23.md), [Experiment log](experiment_log.csv), [Latest metrics JSON](outputs/latest_metrics.json), [Automation heartbeat](outputs/automation_heartbeat.json)
 <!-- DAILY_SUMMARY_END -->
 
 ---
@@ -88,6 +88,7 @@ The repository includes `.github/workflows/daily-report.yml`, which reruns the 7
 - `reports/daily/YYYY-MM-DD.md`
 - `experiment_log.csv`
 - `outputs/latest_metrics.json`
+- `outputs/automation_heartbeat.json`
 - the README snapshot above
 
 The workflow commits only when generated artifacts change.

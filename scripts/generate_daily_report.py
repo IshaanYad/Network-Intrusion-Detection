@@ -26,6 +26,7 @@ DATASET_PATHS = [
     REPO_ROOT / "cybersecurity.csv",
 ]
 LATEST_METRICS_PATH = REPO_ROOT / "outputs" / "latest_metrics.json"
+AUTOMATION_HEARTBEAT_PATH = REPO_ROOT / "outputs" / "automation_heartbeat.json"
 EXPERIMENT_LOG_PATH = REPO_ROOT / "experiment_log.csv"
 REPORTS_DIR = REPO_ROOT / "reports" / "daily"
 README_PATH = REPO_ROOT / "README.md"
@@ -189,6 +190,19 @@ def update_experiment_log(metrics_payload: dict) -> None:
     log_df.to_csv(EXPERIMENT_LOG_PATH, index=False)
 
 
+def write_automation_heartbeat(metrics_payload: dict) -> None:
+    heartbeat = {
+        "run_date": metrics_payload["run_date"],
+        "generated_at": metrics_payload["generated_at"],
+        "report_timezone": metrics_payload["report_timezone"],
+        "report_path": metrics_payload["report_path"],
+        "model": metrics_payload["model"],
+        "status": "ok",
+    }
+    AUTOMATION_HEARTBEAT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    AUTOMATION_HEARTBEAT_PATH.write_text(json.dumps(heartbeat, indent=2))
+
+
 def metric_delta_line(metric_name: str, payload: dict) -> str:
     delta = payload["metric_deltas_vs_previous_run"].get(metric_name)
     if delta is None:
@@ -264,7 +278,7 @@ def update_readme(metrics_payload: dict) -> None:
 | Recommended Threshold | {metrics_payload['threshold']} |
 | Split | 70 / 30 |
 
-Latest artifacts: [Daily report](reports/daily/{metrics_payload['run_date']}.md), [Experiment log](experiment_log.csv), [Latest metrics JSON](outputs/latest_metrics.json)
+Latest artifacts: [Daily report](reports/daily/{metrics_payload['run_date']}.md), [Experiment log](experiment_log.csv), [Latest metrics JSON](outputs/latest_metrics.json), [Automation heartbeat](outputs/automation_heartbeat.json)
 <!-- DAILY_SUMMARY_END -->"""
 
     readme_text = README_PATH.read_text()
@@ -291,11 +305,13 @@ def main() -> None:
 
     LATEST_METRICS_PATH.parent.mkdir(parents=True, exist_ok=True)
     LATEST_METRICS_PATH.write_text(json.dumps(metrics_payload, indent=2))
+    write_automation_heartbeat(metrics_payload)
     update_experiment_log(metrics_payload)
     write_daily_report(metrics_payload)
     update_readme(metrics_payload)
 
     print(f"Wrote {LATEST_METRICS_PATH.relative_to(REPO_ROOT)}")
+    print(f"Wrote {AUTOMATION_HEARTBEAT_PATH.relative_to(REPO_ROOT)}")
     print(f"Wrote {EXPERIMENT_LOG_PATH.relative_to(REPO_ROOT)}")
     print(f"Wrote reports/daily/{run_date}.md")
     print(f"Updated {README_PATH.relative_to(REPO_ROOT)}")

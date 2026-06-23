@@ -37,7 +37,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md experiment_log.csv outputs/latest_metrics.json reports/daily
+          git add README.md experiment_log.csv outputs/latest_metrics.json outputs/automation_heartbeat.json reports/daily
           git diff --cached --quiet && exit 0
           git commit -m "chore: refresh daily IDS evaluation report"
           git push origin HEAD:${{ github.ref_name }}
