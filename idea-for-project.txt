@@ -1,0 +1,20 @@
+2. Network Intrusion Detection Using Ensemble Learning
+
+📌 Idea
+
+Detect malicious network activity from traffic data.
+
+🔧 ML Tasks
+	•	Classification → Normal vs Attack
+	•	Handling imbalanced data
+
+🤖 Models
+	•	Logistic Regression
+	•	Random Forest
+	•	⭐ AdaBoost (widely used in IDS research)
+	•	XGBoost
+
+💡 Why this stands out
+	•	Cybersecurity domain
+	•	Strong research relevance
+	•	Good evaluation metrics (ROC, precision-recall)

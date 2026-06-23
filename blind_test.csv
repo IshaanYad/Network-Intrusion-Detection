@@ -1,0 +1,11 @@
+timestamp,src_ip,dst_ip,protocol,src_port,dst_port,bytes_sent,bytes_received,is_internal_traffic,user_agent,url,attack_type
+2024-03-01 10:00:01,192.168.1.5,142.250.190.46,TCP,54321,443,1200,4500,False,Mozilla/5.0 (Windows NT 10.0; Win64; x64),https://www.google.com/search?q=machine+learning,None
+2024-03-01 10:05:22,10.0.0.15,93.184.216.34,TCP,49152,80,450,120,False,Mozilla/5.0,http://example.com/login?user=' OR '1'='1' --,SQL Injection
+2024-03-01 10:10:45,192.168.1.12,192.168.1.1,UDP,34567,53,64,128,True,unknown,None,None
+2024-03-01 10:15:10,172.16.0.5,192.168.1.50,TCP,60001,22,0,0,False,nmap/7.80,None,Port Scan
+2024-03-01 10:20:33,192.168.1.20,104.18.2.1,TCP,55555,80,890,340,False,Mozilla/5.0,http://mysite.com/comment?text=<script>alert(1)</script>,XSS
+2024-03-01 10:25:55,192.168.1.5,142.250.190.46,TCP,54322,443,2400,8500,False,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),https://www.google.com/search?q=python+tutorials,None
+2024-03-01 10:30:12,45.33.32.156,192.168.1.100,TCP,44444,80,600,200,False,sqlmap/1.4.12,http://vulnerable-site.com/products.php?id=1,SQL Injection
+2024-03-01 10:35:40,192.168.1.15,192.168.1.1,TCP,50000,80,150,300,True,Mozilla/5.0,http://internal-dashboard/api/status,None
+2024-03-01 10:40:05,192.168.1.100,203.0.113.5,TCP,51000,443,50000000,1200,False,Mozilla/5.0,https://backup-server.com/upload,Data Exfiltration
+2024-03-01 10:45:15,10.0.0.50,93.184.216.34,TCP,52000,80,320,150,False,curl/7.68.0,http://example.com/../../etc/passwd,Path Traversal

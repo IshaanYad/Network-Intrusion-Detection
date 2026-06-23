@@ -1,0 +1,43 @@
+name: Daily IDS Report
+
+on:
+  schedule:
+    - cron: "45 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-ids-report
+  cancel-in-progress: false
+
+jobs:
+  refresh-report:
+    runs-on: ubuntu-latest
+    env:
+      REPORT_TIMEZONE: Asia/Kolkata
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate daily evaluation artifacts
+        run: python scripts/generate_daily_report.py
+
+      - name: Commit updated artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md experiment_log.csv outputs/latest_metrics.json reports/daily
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: refresh daily IDS evaluation report"
+          git push origin HEAD:${{ github.ref_name }}
