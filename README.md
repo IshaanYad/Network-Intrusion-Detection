@@ -16,7 +16,7 @@ Traditional security systems often miss novel "zero-day" attacks. This project l
 
 | Metric | Latest Value |
 | :--- | :---: |
-| Last Run Date | 2026-06-27 |
+| Last Run Date | 2026-06-28 |
 | Accuracy | 0.965667 |
 | Precision | 0.589474 |
 | Recall | 0.466667 |
@@ -24,7 +24,7 @@ Traditional security systems often miss novel "zero-day" attacks. This project l
 | Recommended Threshold | 0.5 |
 | Split | 70 / 30 |
 
-Latest artifacts: [Daily report](reports/daily/2026-06-27.md), [Experiment log](experiment_log.csv), [Latest metrics JSON](outputs/latest_metrics.json), [Automation heartbeat](outputs/automation_heartbeat.json)
+Latest artifacts: [Daily report](reports/daily/2026-06-28.md), [Experiment log](experiment_log.csv), [Latest metrics JSON](outputs/latest_metrics.json), [Automation heartbeat](outputs/automation_heartbeat.json)
 <!-- DAILY_SUMMARY_END -->
 
 ---
