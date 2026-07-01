@@ -7,3 +7,4 @@ date,dataset_path,model,train_fraction,test_fraction,threshold,accuracy,precisio
 2026-06-28,data/cybersecurity.csv,RandomForestClassifier,0.7,0.3,0.5,0.965667,0.589474,0.466667,0.52093,2841,39,64,56,"dst_port, src_port, bytes_sent, bytes_received, is_privileged_port"
 2026-06-29,data/cybersecurity.csv,RandomForestClassifier,0.7,0.3,0.5,0.965667,0.589474,0.466667,0.52093,2841,39,64,56,"dst_port, src_port, bytes_sent, bytes_received, is_privileged_port"
 2026-06-30,data/cybersecurity.csv,RandomForestClassifier,0.7,0.3,0.5,0.965667,0.589474,0.466667,0.52093,2841,39,64,56,"dst_port, src_port, bytes_sent, bytes_received, is_privileged_port"
+2026-07-01,data/cybersecurity.csv,RandomForestClassifier,0.7,0.3,0.5,0.965667,0.589474,0.466667,0.52093,2841,39,64,56,"dst_port, src_port, bytes_sent, bytes_received, is_privileged_port"
