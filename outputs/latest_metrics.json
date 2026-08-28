@@ -1,8 +1,8 @@
 {
-  "run_date": "2026-08-27",
-  "generated_at": "2026-08-27T23:12:46.621764+05:30",
+  "run_date": "2026-08-29",
+  "generated_at": "2026-08-29T00:21:42.027762+05:30",
   "report_timezone": "Asia/Kolkata",
-  "report_path": "reports/daily/2026-08-27.md",
+  "report_path": "reports/daily/2026-08-29.md",
   "dataset_path": "data/cybersecurity.csv",
   "dataset_rows": 10000,
   "attack_rate": 0.04,
