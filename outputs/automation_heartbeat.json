@@ -1,8 +1,8 @@
 {
-  "run_date": "2026-09-26",
-  "generated_at": "2026-09-26T17:05:59.471392+05:30",
+  "run_date": "2026-09-27",
+  "generated_at": "2026-09-27T17:44:48.867236+05:30",
   "report_timezone": "Asia/Kolkata",
-  "report_path": "reports/daily/2026-09-26.md",
+  "report_path": "reports/daily/2026-09-27.md",
   "model": "RandomForestClassifier",
   "status": "ok"
 }
